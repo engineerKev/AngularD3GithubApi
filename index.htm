@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app = "githubD3App">
+    <head>
+        <title>Github Users graphed with D3</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta charset="UTF-8">
+
+        <!-- load bootstrap and fontawesome via CDN -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+        <style>
+        /*html, body, input, select, textarea
+            {
+                font-size: 1.05em !important;
+            }*/
+            .font-change {
+                font-size: 1.05em !important;
+            }
+            .tick, .axis, text{
+                stroke: none;
+                shape-rendering: crispEdges;
+                font: 10px sans-serif;
+                fill: #333;
+            }
+            .row-spacing{
+                margin-bottom: 2em;
+            }
+            .header-title{
+                padding: 2% 0;
+                color: #fff;
+            }
+            .header-bg{
+                background-color: #555;
+            }
+            .chart {
+                margin: 0 auto;
+                width: 960px;
+            }
+            .chart-padding {
+                margin-top: 4em;
+            }
+            .axis, line{
+                stroke: #333;
+                fill: none;
+            }
+            .bar:hover {
+                fill: #d9534f;
+            }
+            .tool-tip {
+                line-height: 1;
+                font-weight: bold;
+                padding: 12px;
+                background: rgba(0,0,0, 0.8);
+                color: #fff;
+                border-radius: 2px;
+            }
+            .tool-tip:after{
+                box-sizing: border-box;
+                display: block;
+                font-size: 10px;
+                width: 100%;
+                line-height: 1;
+                color: rgba(0,0,0, 0.8);
+                content: "\25BC";
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 94%;
+                text-align: center;
+            }
+            tool-tip.n:after {
+                margin: -1px 0 0 0;
+                top: 100%;
+                left: 0;
+            }
+        </style>
+        
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+        <script src="//code.angularjs.org/1.3.0-rc.2/angular.min.js"></script>
+        <script src="//code.angularjs.org/1.3.0-rc.2/angular-route.min.js"></script>
+        <script src="//code.angularjs.org/1.3.0-rc.2/angular-resource.min.js"></script>
+        <script src="app.js"></script>
+        <script src="controllers.js"></script>
+        <script src="services.js"></script>
+        <script src="routes.js"></script>
+        <script src="directives.js"></script>
+        <script src="factories.js"></script>
+        
+    <body class="bg-color">
+
+        <header>
+			<nav class="navbar navbar-default header-bg">
+			<div class="container">
+				<div class="text-center">
+					<h1 class="header-title">Github Users graphed with D3</h1>
+				</div>
+			</div>
+			</nav>
+		</header>
+
+        <div class="container">
+            
+            <div ng-view></div>
+
+		</div>
+
+    </body>
+</html>
